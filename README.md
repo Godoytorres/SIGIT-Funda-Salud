@@ -1,51 +1,52 @@
-# SIGIT-Funda-Salud
-# Sistema de Gestión de Informes Técnicos - FUNDASALUD
-<p>Lógica de Negocios</p>
+# SIGIT-FUNDASALUD
 
-> ### 1. Propósito del Sistema
-El sistema tiene como objetivo **automatizar, centralizar y optimizar** la elaboración, revisión, aprobación, control y almacenamiento de los informes técnicos del Departamento de Informática de la Fundación Trujillana de la Salud (FUNDASALUD).
+## DESARROLLO DE UN SISTEMA PARA LA ELABORACIÓN Y GESTIÓN DE INFORMES TÉCNICOS DEL DEPARTAMENTO DE INFORMÁTICA DE FUNDASALUD
+Sistema de Gestión de Informes Técnicos para el Departamento de Informática de la Fundación Trujillana de la Salud (FUNDASALUD)
 
->### 2. Reglas de Negocio Generales
+>## Descripción General
+El presente proyecto consiste en el desarrollo de un sistema que permite **automatizar, centralizar y optimizar** la elaboración, revisión, aprobación, control y almacenamiento de los informes técnicos del Departamento de Informática de FUNDASALUD. 
+
+Actualmente, la elaboración de estos informes se realiza de forma manual y física, lo que genera retrasos, riesgo de pérdida de documentos, duplicidad de información y dificultad para consultar y dar seguimiento a las actividades técnicas. Este sistema busca resolver estas problemáticas mediante la digitalización y estructuración del proceso completo.
+
+>## Objetivo Principal
+Automatizar los procesos de elaboración, gestión, control y archivo de los informes técnicos del Departamento de Informática de la Fundación Trujillana de la Salud, con el fin de mejorar la eficiencia, seguridad y trazabilidad de la información técnica institucional.
+
+>## Usuarios Clave (Roles)
+
+- **Técnico**: Encargado de crear, editar y dar seguimiento a sus propios informes técnicos.
+- **Supervisor**: Responsable de revisar, solicitar correcciones y aprobar los informes de los técnicos a su cargo.
+- **Administrador**: Gestiona usuarios, configura el sistema, genera reportes gerenciales y tiene acceso total a toda la información.
+
+>## Funcionalidades Principales (Alcance)
+
+El sistema permitirá:
+
+- Registrar, editar y gestionar informes técnicos de manera digital.
+- Definir y controlar los diferentes estados del informe (Borrador, En Revisión, Aprobado, Rechazado y Archivado).
+- Establecer un flujo de aprobación secuencial con notificaciones.
+- Asignar técnico responsable y registrar evidencias adjuntas a cada informe.
+- Controlar el acceso según roles y permisos de usuario.
+- Evitar duplicidad de números de informe por año.
+- Mantener un historial completo de cambios y auditoría de cada informe.
+- Generar reportes estadísticos y de gestión para los supervisores y directivos.
+- Archivar de forma segura los informes una vez aprobados.
+- Garantizar la integridad y trazabilidad de toda la información generada.
+
+>## Lógica de Negocios
 
 **RN-01 – Creación de Informes**  
-Todo informe técnico debe ser registrado en el sistema por un usuario con rol de **Técnico** o superior. Cada informe debe contener obligatoriamente: título, descripción, fecha, técnico responsable y al menos un archivo adjunto como evidencia.
+Todo informe debe ser creado por un usuario con rol de Técnico o superior, y debe contener obligatoriamente título, descripción, fecha, técnico responsable y al menos una evidencia adjunta.
 
-**RN-02 – Estados del Ciclo de Vida del Informe**
-- **Borrador**: En elaboración.
-- **En Revisión**: Enviado para supervisión.
-- **Aprobado**: Revisado y aprobado por el supervisor o jefe de departamento.
-- **Rechazado**: Devuelto con observaciones para corrección.
-- **Archivado**: Informe finalizado y almacenado de forma definitiva.
+**RN-02 – Estados del Ciclo de Vida**  
+- Borrador, En Revisión, Aprobado, Rechazado y Archivado.
 
 **RN-03 – Flujo de Aprobación**  
-El informe sigue un flujo secuencial:  
-Técnico → Crea (Borrador) → Envía a Revisión → Supervisor revisa → Aprueba o Rechaza → (Si es aprobado) se archiva automáticamente.
+Flujo secuencial: Técnico → Supervisor → Aprobación o Rechazo con observaciones.
 
-**RN-04 – Control de Acceso y Permisos**  
-- **Técnico**: Puede crear, editar y consultar solo sus propios informes.  
-- **Supervisor**: Puede revisar, aprobar/rechazar y consultar todos los informes de su departamento.  
-- **Administrador**: Acceso total al sistema (gestión de usuarios, reportes y configuración).
+**RN-04 – Control de Acceso**  
+Acceso restringido según el rol del usuario.
 
-**RN-05 – Restricciones de Validación**
-- No se permite duplicidad de número de informe dentro del mismo año.  
-- La fecha del informe no puede ser posterior a la fecha actual.  
-- Los informes en estado **Aprobado** o **Archivado** no podrán ser editados ni eliminados.  
-- Todo informe debe registrar el historial de cambios (auditoría).
-
-**RN-06 – Gestión de Usuarios** 
-
-El sistema debe manejar roles y permisos basados en la estructura organizacional del Departamento de Informática.
-
-**RN-07 – Seguridad de la Información**
-- Todos los usuarios deben autenticarse para acceder al sistema.  
-- Se debe registrar el usuario, fecha y hora de cada operación crítica.  
-- Los informes aprobados deben tener respaldo automático.
-
->### 3. Objetivos de la Lógica de Negocios
-
-- Eliminar por completo la elaboración manual de informes en formato físico.
-- Reducir significativamente los tiempos de elaboración, revisión y búsqueda de información.
-- Garantizar la **integridad, trazabilidad y confidencialidad** de los informes técnicos.
-- Mejorar el control y seguimiento de las actividades realizadas por el Departamento de Informática.
-- Facilitar la generación de reportes gerenciales y estadísticos.
-
+**RN-05 – Reglas de Validación**  
+- No se permite duplicidad de número de informe por año.  
+- Los informes aprobados no pueden ser editados ni eliminados.  
+- Registro obligatorio de auditoría en cada operación.
