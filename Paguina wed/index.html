@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Login y Registro</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Sistema de Login y Registro</h1>
+
+      <div class="tabs">
+        <button id="show-login" class="active">Iniciar sesión</button>
+        <button id="show-register">Registrarse</button>
+      </div>
+
+      <section id="login-section" class="panel">
+        <form id="login-form">
+          <label>Email</label>
+          <input type="email" name="email" required />
+          <label>Contraseña</label>
+          <input type="password" name="password" required />
+          <button type="submit">Entrar</button>
+        </form>
+      </section>
+
+      <section id="register-section" class="panel hidden">
+        <form id="register-form">
+          <label>Nombre de usuario</label>
+          <input type="text" name="username" required />
+          <label>Email</label>
+          <input type="email" name="email" required />
+          <label>Contraseña</label>
+          <input type="password" name="password" required />
+          <button type="submit">Registrarse</button>
+        </form>
+      </section>
+
+      <section id="user-panel" class="panel hidden">
+        <h2>Bienvenido, <span id="user-name"></span></h2>
+        <button id="logout">Cerrar sesión</button>
+      </section>
+
+      <div id="message" class="message hidden"></div>
+    </main>
+  </body>
+</html>

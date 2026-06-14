@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --muted: #6b7280;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: #111;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+}
+h1 {
+  text-align: center;
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e9f2;
+  background: transparent;
+  cursor: pointer;
+}
+.tabs button.active {
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+  color: #fff;
+  border: 0;
+}
+.panel {
+  padding: 8px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e9f2;
+}
+button[type="submit"],
+#logout {
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.message {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+.message.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.message.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
